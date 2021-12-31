@@ -1,0 +1,120 @@
+
+
+
+
+
+//bank-pad style 
+.btn{
+    border: 3px solid #1a1a1a;
+    display: inline-block;
+    padding: 10px;
+    position: relative;
+    text-align: center;
+    transition: background 600ms ease, color 600ms ease;
+}
+
+input[type="radio"].toggle {
+    display: none;
+    & + label{
+        cursor: pointer;
+        min-width: 60px;
+        &:hover{
+            background: none;
+            color: #1a1a1a;
+        }
+        &:after{
+            background: #1a1a1a;
+            content: "";
+            height: 100%;
+            position: absolute;
+            top: 0;
+            transition: left 200ms cubic-bezier(0.77, 0, 0.175, 1);
+            width: 100%;
+            z-index: -1;
+        }
+    }
+    &.toggle-left + label {
+        border-right: 0;
+        &:after{
+            left: 100%
+        }
+    }
+    &.toggle-right + label{
+        margin-left: -5px;
+        &:after{
+            left: -100%;
+        }
+    }
+    &:checked + label {
+        cursor: default;
+        color: #fff;
+        transition: color 200ms;
+        &:after{
+            left: 0;
+        }
+    }
+}
+
+
+
+
+
+
+//volume slider style 
+
+
+  
+  #volume-slider{
+    align-items: center;
+    display    : flex;
+    // margin     : 3em auto;
+    padding    : 30px 0;
+    width      : 265px;
+  }
+  
+  
+  .volume-icon{
+    cursor          : pointer;
+    height          : 60px;
+    transform       : rotate(-0deg);
+    transform-origin: center left;
+    width           : 60px;
+  
+    .volume-icon-bg{
+      fill      : #100100;
+      transition: fill 300ms;
+    }
+  
+    &:hover .volume-icon-bg{
+      fill: #b6aebf;
+    }
+  
+  }
+  
+  
+  #circle-mask-shape{
+    transform       : scale(0);
+    transform-origin: center center;
+  }
+  
+  
+  .volume-track{
+    background-color: #e1dee5;
+    border-radius   : 3px;
+    flex            : 1;
+    height          : 4px;
+    margin-left     : 5px;
+    position        : relative;
+  }
+  
+  
+  .volume-indicator{
+    background-color: #6eaa35;
+    border-radius   : 50%;
+    height          : 12px;
+    left            : 0;
+    position        : absolute;
+    top             : -4px;
+    transition      : visibility 100ms, opacity 100ms;
+    width           : 12px;
+  }
