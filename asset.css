@@ -1,9 +1,15 @@
 /* power-pad style */
+
+.toggle-wrapper {
+       position: relative;
+       width: 75px;
+       height: 40px;
+}
 #switch{
-     top: 50%;
-     left: 50%;
-    width: 65px;
-    height: 30px;
+     /* top: 50%;
+     left: 50%; */
+    width: 75px;
+    height: 40px;
 }
 
 .toggle{

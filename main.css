@@ -1,7 +1,19 @@
+body, html {
+  overflow: hidden;
+}
+
+.bank-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
 .btn {
   border: 3px solid #1a1a1a;
+  color: white;
   display: inline-block;
-  padding: 10px;
+  padding: 5px 10px;
   position: relative;
   text-align: center;
   transition: background 600ms ease, color 600ms ease;
@@ -49,49 +61,53 @@ input[type=radio].toggle:checked + label:after {
   left: 0;
 }
 
-#volume-slider {
-  align-items: center;
+.drum-pad {
   display: flex;
-  padding: 30px 0;
-  width: 265px;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  border-radius: 8px;
 }
 
-.volume-icon {
-  cursor: pointer;
-  height: 60px;
-  transform: rotate(0deg);
-  transform-origin: center left;
-  width: 60px;
+.app-wrapper {
+  width: 100vw;
+  height: 100vh;
+  background: #073b4c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.volume-icon .volume-icon-bg {
-  fill: #100100;
-  transition: fill 300ms;
+.app-wrapper .app-container {
+  border: 4px solid goldenrod;
+  padding: 2em;
+  background: #9BC4BC;
+  min-width: 580px;
 }
-.volume-icon:hover .volume-icon-bg {
-  fill: #b6aebf;
+.app-wrapper .app-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-
-#circle-mask-shape {
-  transform: scale(0);
-  transform-origin: center center;
+.app-wrapper .pad-wrapper {
+  width: 50%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.4em;
 }
-
-.volume-track {
-  background-color: #e1dee5;
-  border-radius: 3px;
-  flex: 1;
-  height: 4px;
-  margin-left: 5px;
-  position: relative;
+.app-wrapper .pad-wrapper .drum-pad {
+  margin: 0.2em;
 }
-
-.volume-indicator {
-  background-color: #6eaa35;
-  border-radius: 50%;
-  height: 12px;
-  left: 0;
-  position: absolute;
-  top: -4px;
-  transition: visibility 100ms, opacity 100ms;
-  width: 12px;
+.app-wrapper .function-wrapper {
+  width: 50%;
+}
+.app-wrapper .function-wrapper .volume-slider {
+  margin: 2em 0;
+}
+.app-wrapper .function-wrapper .sound-control {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.app-wrapper .function-wrapper .sound-control .bank-container {
+  margin-left: 2em;
 }/*# sourceMappingURL=main.css.map */
