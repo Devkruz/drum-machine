@@ -1,5 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Luxurious+Roman&display=swap");
 body, html {
   overflow: hidden;
+  font-family: Luxurious Roman;
 }
 
 .bank-container {
@@ -11,7 +13,6 @@ body, html {
 
 .btn {
   border: 3px solid #1a1a1a;
-  color: white;
   display: inline-block;
   padding: 5px 10px;
   position: relative;

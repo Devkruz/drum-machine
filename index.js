@@ -368,12 +368,10 @@ const bankTwo = [
 ];
 
 
-
+//root component
 
 class App extends React.Component {
        
-    
-          
        constructor(props) {
            super(props);
 
@@ -381,7 +379,7 @@ class App extends React.Component {
               power: true,
               bank: bankOne,
               volume:0.5,
-              display: ""
+              display: "Press the keys or click the pad"
             };
  
             this.handlePower = this.handlePower.bind(this);
@@ -429,14 +427,20 @@ class App extends React.Component {
            this.handleDisplay(`Volume: ${Math.floor((this.state.volume * 100))}`)
        };
 
-        
- 
          
-
+    
+        
 
      render() {
+
+       let drumpad = []
+       for(let i = 0; i < 9; i++) {
+          drumpad.push(<DrumPad band={this.state.bank[i]} power={this.state.power} volume={this.state.volume} handleDisplay={this.handleDisplay} />)
+       }
+
+
            return(
-                <div className="app-wrapper">
+                <div id= "drum-machine" className="app-wrapper">
                   <div className="app-container">
                     
                     <div className="function-wrapper">
@@ -451,15 +455,10 @@ class App extends React.Component {
                     </div>
                    
                     <div className="pad-wrapper">
-                      <DrumPad band={this.state.bank[0]} power={this.state.power} volume={this.state.volume} handleDisplay={this.handleDisplay} />
-                      <DrumPad band={this.state.bank[1]} power={this.state.power} volume={this.state.volume} handleDisplay={this.handleDisplay} />
-                      <DrumPad band={this.state.bank[2]} power={this.state.power} volume={this.state.volume} handleDisplay={this.handleDisplay} />
-                      <DrumPad band={this.state.bank[3]} power={this.state.power} volume={this.state.volume} handleDisplay={this.handleDisplay} />
-                      <DrumPad band={this.state.bank[4]} power={this.state.power} volume={this.state.volume} handleDisplay={this.handleDisplay} />
-                      <DrumPad band={this.state.bank[5]} power={this.state.power} volume={this.state.volume} handleDisplay={this.handleDisplay} />
-                      <DrumPad band={this.state.bank[6]} power={this.state.power} volume={this.state.volume} handleDisplay={this.handleDisplay} />
-                      <DrumPad band={this.state.bank[7]} power={this.state.power} volume={this.state.volume} handleDisplay={this.handleDisplay} />
-                      <DrumPad band={this.state.bank[8]} power={this.state.power} volume={this.state.volume} handleDisplay={this.handleDisplay} />
+                     {
+                      drumpad
+                     }
+                     
                     </div>
 
                     </div>
@@ -539,7 +538,7 @@ class App extends React.Component {
                         {this.props.band.keyTrigger}
                             
                           <audio
-                            className='sound'
+                            className='clip'
                             id={this.props.band.keyTrigger}
                             src={this.props.band.url} 
                           />
@@ -618,13 +617,13 @@ class App extends React.Component {
                        MozBoxShadow: "7px 6px 13px -6px rgba(0,0,0,0.29) inset"
                   }
                     return(
-                       <div className="display">
+                       <div  id="display" className="display">
                          <p style = {displayStyle}>{this.props.display}</p>
                        </div>
                     )
               }
     };
-//root component
+
 
 
 
